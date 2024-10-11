@@ -48,3 +48,43 @@
         }
         return numbers
     } ```
+3.Remove Duplicates from Sorted Array II
+
+```kotlin 
+class Solution {
+    fun removeDuplicates(nums: IntArray): Int {
+
+        if(nums.size<= 2) return nums.size
+
+        var i =2 
+
+        for (j in 2 until nums.size){
+
+if(nums[j] !=nums[i -2]){
+
+    nums[i] = nums[j]
+    i++
+}
+        }
+
+        return i
+
+    }
+}```
+4.Remove Duplicates from Sorted Array
+```kotlin
+class Solution {
+    fun removeDuplicates(nums: IntArray): Int {
+        if(nums.size<=1) return nums.size
+        var i =0
+        for (j in 1 until nums.size){
+            if(nums[j]!= nums[i]){
+               i++
+                nums[i] = nums[j]
+            }
+        }
+        return i +1
+    }
+}
+```
+
