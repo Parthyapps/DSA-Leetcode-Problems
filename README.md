@@ -84,3 +84,33 @@
     }
     }
     ```
+5.To remove and print only non-prime numbers 
+
+         ```kotlin
+            fun main() {
+    val number = intArrayOf(22,32,43,42,54,56,23,29)
+    printNonPrimeNumbersFromArray(number)
+      }
+      fun printNonPrimeNumbersFromArray(nums: IntArray) {
+          for (num in nums) {
+              if (!checkprime(num)) {  // Check if the number is non-prime
+                  print("$num ")    // Print non-prime numbers
+              }
+          }
+      }
+      
+      fun checkprime(number: Int): Boolean{
+          
+         if (number<=1) return false
+         
+         for (i in 2..number / 2){
+             
+             if (number% i ==0){
+                 
+                 return false
+             }
+             
+         }
+          
+          return true
+      }```
