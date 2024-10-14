@@ -114,3 +114,18 @@
           
           return true
       }```
+
+6.To rotate an array in Kotlin, we can shift the elements either to the right or to the left by a given number of positions. Let’s look at right rotations:
+       ```kotlin
+       class Solution {
+       fun rotate(nums: IntArray, k: Int): Unit {
+        var nsize= nums.size
+        var rotation = k % nsize
+         val rotationArray = nums.copyOfRange(nsize-rotation , nsize) + nums.copyOfRange(0, nsize - rotation)
+        for (i in nums.indices){
+            nums[i] = rotationArray[i]
+           }
+       }
+      } ```
+
+
