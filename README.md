@@ -1,7 +1,7 @@
 # DSA-Leetcode-Problems using Kotlin
 1.Remove Element
-   
-    ~~~kotlin
+    
+   ```kotlin
     class Solution {
     fun main(){
         var nums = intArrayOf(2,3,2,3,4,6,6,5,4)
@@ -20,11 +20,12 @@
             }
             return k
         }
-    } ~~`
+    }
+```
 
 2.Kotlin: Sort an Array in Ascending Order 
       
-        ```kotlin
+   ```kotlin
             fun main() {
             // initilize the array
             val numbers = intArrayOf(2,1,2,8,5,6,3,2)
@@ -49,11 +50,11 @@
                         }
                     }
                     return numbers
-                } 
-                ```
+                }
+```
 3.Remove Duplicates from Sorted Array II
 
-    ```kotlin 
+   ```kotlin 
     class Solution {
         fun removeDuplicates(nums: IntArray): Int {
         if(nums.size<= 2) return nums.size
@@ -66,10 +67,11 @@
                 }
         return i
     }
-    }```
+    }
+```
 4.Remove Duplicates from Sorted Array
 
-    ```kotlin
+   ```kotlin
     class Solution {
     fun removeDuplicates(nums: IntArray): Int {
         if(nums.size<=1) return nums.size
@@ -83,10 +85,11 @@
         return i +1
     }
     }
-    ```
+```
 5.To remove and print only non-prime numbers 
 
-         ```kotlin
+   
+   ```kotlin
             fun main() {
     val number = intArrayOf(22,32,43,42,54,56,23,29)
     printNonPrimeNumbersFromArray(number)
@@ -113,11 +116,12 @@
          }
           
           return true
-      }```
+      }
+```
 
 6.To rotate an array in Kotlin, we can shift the elements either to the right or to the left by a given number of positions. Let’s look at right rotations:
       
-       ```kotlin
+   ```kotlin
        class Solution {
        fun rotate(nums: IntArray, k: Int): Unit {
         var nsize= nums.size
@@ -127,6 +131,34 @@
             nums[i] = rotationArray[i]
            }
          }
-       } ```
+       }
+```
+
+7.Max or min in given array
+   ```kotlin
+      fun main() {
+          val myArray = intArrayOf(2,1,3,4,1,7)
+          val min = myArray.minOrNull()
+          val max = myArray.maxOrNull()
+          println("$min. $max")
+      }
+   ```
+using for loop
+  ```kotlin
+fun main() {
+    val myArray = intArrayOf(2,11,3,4,0,-2,-1,7)
+    var min = myArray[0]
+    var max = myArray[0]
+    for (num in myArray){
+        if (num > max){
+           max = num
+        }
+        if (num < min){
+            min = num
+        }
+    }
+    println("$min. $max")
+}
+```
 
 
