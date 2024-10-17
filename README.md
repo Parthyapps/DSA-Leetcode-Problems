@@ -160,5 +160,19 @@ fun main() {
     println("$min. $max")
 }
 ```
+8.Reverse an array using for loop
 
-
+```kotlin
+fun main() {
+    val array = arrayOf("1","2","3","5")
+   println(reversedArray(array).joinToString())
+}
+fun reversedArray(array: Array<String>):Array<String>{
+    // Create a new array to store the reversed elements
+   val revers = Array(array.size) {"0"}
+    // Loop through the original array and fill the reversedArray from the end
+   for(i in array.indices)
+      revers[array.size -1 -i] = array[i]
+    return revers
+}
+```
