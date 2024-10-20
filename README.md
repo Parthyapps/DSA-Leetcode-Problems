@@ -176,3 +176,23 @@ fun reversedArray(array: Array<String>):Array<String>{
     return revers
 }
 ```
+
+9.Two Sum with an Array (Simple Solution)
+
+```kotlin
+fun main() {
+    val array = arrayOf(2, 7, 11, 15)
+    println(reversedArray(array, 9))
+}
+fun reversedArray(array: Array<Int>, target: Int): Pair<Int, Int>?{
+    var map = mutableMapOf<Int, Int>()
+    for(i in array.indices){
+     val comp = target - array[i]
+     if(map.containsKey(comp)){
+        return Pair(map[comp]!!, i)
+     }
+     map[array[i]]=  i
+  }
+    return null   
+}
+```
