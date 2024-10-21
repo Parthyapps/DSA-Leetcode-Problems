@@ -1,4 +1,4 @@
-# DSA-Leetcode-Problems using Kotlin
+# DSA-Important & Leetcode-Problems using Kotlin
 1.Remove Element
     
    ```kotlin
@@ -196,3 +196,35 @@ fun reversedArray(array: Array<Int>, target: Int): Pair<Int, Int>?{
     return null   
 }
 ```
+10.Merge Sorted Array
+
+Solution Approach:
+    Start from the end of both arrays (nums1 and nums2) and merge elements from the back to the front. This allows you to fill the nums1 array in place without needing additional space.
+
+```kotlin
+fun merge(nums1: IntArray, m: Int, nums2: IntArray, n: Int): Unit {
+    var i = m - 1  // Last index of the valid portion of nums1
+    var j = n - 1  // Last index of nums2
+    var k = m + n - 1  // Last index of nums1 array
+
+    // Compare elements from the end and place the largest at the end of nums1
+    while (i >= 0 && j >= 0) {
+        if (nums1[i] > nums2[j]) {
+            nums1[k] = nums1[i]
+            i--
+        } else {
+            nums1[k] = nums2[j]
+            j--
+        }
+        k--
+    }
+
+    // If there are remaining elements in nums2, copy them
+    while (j >= 0) {
+        nums1[k] = nums2[j]
+        j--
+        k--
+    }
+}
+```
+
