@@ -227,4 +227,21 @@ fun merge(nums1: IntArray, m: Int, nums2: IntArray, n: Int): Unit {
     }
 }
 ```
-
+11.majority element in the array
+- Time Complexity: O(n), where n is the number of elements in the array. We only pass through the array once.
+- Space Complexity: O(1), since we are using only a few variables.
+   ```kotlin
+  class Solution {
+    fun majorityElement(nums: IntArray): Int {
+        var n = 0
+        var result = 0
+        for (i in nums){
+            if (n == 0){
+                result = i
+            }
+            n += if(i == result) 1 else -1
+        }
+        return result
+    }
+}
+```
