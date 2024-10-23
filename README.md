@@ -243,5 +243,31 @@ fun merge(nums1: IntArray, m: Int, nums2: IntArray, n: Int): Unit {
         }
         return result
     }
+  }
+   ```
+12. Best Time to Buy and Sell Stock
+Edge Case:
+    If the array is sorted in descending order (e.g., prices = [7, 6, 4, 3, 1]), there is no opportunity to make a profit, so the function will return 0.
+Time Complexity:
+    O(n), where n is the length of the array. We only pass through the array once.
+Space Complexity:
+    O(1), since we are only using two variables (minPrice and maxProfit).
+    
+ ``` kotlin
+fun maxProfit(prices: IntArray): Int {
+    var minPrice = Int.MAX_VALUE  // Start with a large number for the minimum price
+    var maxProfit = 0             // To keep track of the maximum profit
+
+    for (price in prices) {
+        if (price < minPrice) {
+            minPrice = price  // Update the minimum price
+        } else {
+            val profit = price - minPrice  // Calculate profit if sold at current price
+            maxProfit = maxOf(maxProfit, profit)  // Keep track of the maximum profit
+        }
+    }
+    return maxProfit
 }
 ```
+
+
