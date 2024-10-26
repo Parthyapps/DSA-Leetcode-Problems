@@ -269,5 +269,26 @@ fun maxProfit(prices: IntArray): Int {
     return maxProfit
 }
 ```
+13.Reverse Words in a String
+ ```kotlin
+fun reverseWords(s: String): String {
+    // Split the string into words and filter out any empty strings
+    val words = s.split(" ").filter { it.isNotEmpty() }
+    // Reverse the list of words and join them back into a string
+    val reversed = StringBuilder()
+    for (i in words.indices.reversed()) {
+        reversed.append(words[i])
+        if (i != 0) {
+            reversed.append(" ")
+        }
+    }
+    return reversed.toString()
+}
+fun main() {
+    val inputString = "Hello world from OpenAI"
+    val result = reverseWords(inputString)
+    println(result)  // Output: "OpenAI from world Hello"
+}
+```
 
 
