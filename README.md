@@ -290,5 +290,14 @@ fun main() {
     println(result)  // Output: "OpenAI from world Hello"
 }
 ```
+14. Length of the last string
+```kotlin
+class Solution {
+    fun lengthOfLastWord(s: String): Int {    
+        val word = s.trim().split(" ")
+        return if (word.isNotEmpty()) word.last().length else 0
+    }
+}
+```
 
 
