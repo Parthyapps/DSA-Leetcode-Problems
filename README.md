@@ -299,5 +299,34 @@ class Solution {
     }
 }
 ```
-
+15.Validate palindrom
+-simple solution
+```kotlin
+class Solution {
+    fun isPalindrome(s: String): Boolean {
+    val filter = s.filter{
+        it.isLetterOrDigit()
+    }.toLowerCase() == filter.reversed()
+    return filter == filter.reversed()
+    }
+}
+class Solution {
+    fun isPalindrome(s: String): Boolean {
+   var left =0
+   var right = s.length -1
+  while(left < right){
+    while((left < right) && !s[left].isLetterOrDigit()){
+      left++
+    }
+    while((left < right) && !s[right].isLetterOrDigit()){
+        right--
+    }
+    if(s[left].toLowerCase() != s[right].toLowerCase()){
+        return false
+    }
+    left++
+    right--  }
+       return true
+}}
+```
 
