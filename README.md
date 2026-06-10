@@ -1,4 +1,4 @@
-# DSA-Important & Leetcode-Problems using Kotlin
+# DSA-Important problems & Leetcode-Problems using Kotlin
 1.Remove Element
     
    ```kotlin
